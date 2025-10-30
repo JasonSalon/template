@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WHIPO</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 30px;
+        }
+
+        .mascot-area {
+            position: relative;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mascot-path {
+            position: relative;
+            width: 100%;
+            height: 100px;
+        }
+
+        .dashed-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-image:
+                linear-gradient(90deg, #0d47a1 0%, #0d47a1 30px, transparent 30px, transparent 60px),
+                linear-gradient(90deg, #0d47a1 0%, #0d47a1 30px, transparent 30px, transparent 60px);
+            background-size: 120px 8px;
+            background-repeat: repeat-x;
+            background-position: 0 20px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        h1 {
+            color: #2196f3;
+            font-size: 46px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-weight: 100;
+        }
+
+        .intro-text {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .intro-text strong {
+            font-weight: 600;
+        }
+
+        .steps-intro {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            padding: 25px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .step-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #2196f3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .step-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .step-content h3 {
+            color: #212121;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: block;
+            background: #2196f3;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 30px auto;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .cta-button:hover {
+            background: #1976d2;
+        }
+
+        .support-section {
+            text-align: left;
+        }
+
+        .support-section p {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #2196f3;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+        }
+
+        .signature {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .footer-links {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 20px 0 0;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links a:hover {
+            color: #666;
+        }
+
+        .social-links {
+            text-align: left;
+            margin: 20px 0 30px 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 10px 0 0;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .social-links a:last-child {
+            margin-right: 0;
+        }
+
+        .social-links a svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .footer-section {
+            background: #f9f9f9;
+            padding: 40px 30px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2196f3;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://whipo-assets-bucket.s3.ap-southeast-1.amazonaws.com/html-templates/Welcome+Header+Email.png"
+                alt="WHIPO Welcome Header" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <div class="content">
+            <h1>Welcome to WHIPO—Let's Get You Started!</h1>
+
+            <p class="intro-text">Hi <strong>[Service Provider Name]</strong>,</p>
+
+            <p class="intro-text">Welcome to the WHIPO family! We're thrilled to have you join our community of service
+                providers ready to help customers find the services they need.</p>
+
+            <p class="steps-intro">You're just a few steps away from setting up your profile and showcasing your
+                services to the world. Here's how to get started:</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Complete Your Profile & Verification</h3>
+                        <p>Submit your business or personal information and complete the account activation form for
+                            account review and verification.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path
+                                d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 19c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10z" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Set Up Your Service Profile</h3>
+                        <p>Showcase your expertise, add your services, and start reaching out to potential customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path
+                                d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-5-5h4v4h-4z" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Manage Bookings with Ease</h3>
+                        <p>Once your services are live, customers can easily book appointments based on your
+                            availability.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.72-7 8.77V12H5V6.3l7-3.11v8.8z" />
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3>Stay Connected & Build Relationships</h3>
+                        <p>Build relationships, get feedback, and stay updated on all new requests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="cta-button" target="_blank">Complete My Profile Now</a>
+
+            <div class="footer-divider"></div>
+
+            <div class="support-section">
+                <p>Have questions or need help setting up? Our dedicated support team is here to assist you every step
+                    of the way.</p>
+                <p>We can't wait to see your services shine!</p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="tagline">Your Service. Powered.</div>
+            <div class="signature">
+                Cheers,<br>
+                The WHIPO Team
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-links">
+                    <a href="https://businesshub.whipo.ph/term-of-use" target="_blank">TERMS OF USE</a>
+                    <!-- <a href="#">HELP CENTER</a> -->
+                    <a href="https://businesshub.whipo.ph/privacy-policy" target="_blank">PRIVACY POLICY</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/whipo.ph/" class="facebook" title="Facebook" target="_blank">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M48 24C48 10.7453 37.2547 0 24 0C10.7453 0 0 10.7453 0 24C0 35.255 7.74912 44.6995 18.2026 47.2934V31.3344H13.2538V24H18.2026V20.8397C18.2026 12.671 21.8995 8.8848 29.9194 8.8848C31.44 8.8848 34.0637 9.18336 35.137 9.48096V16.129C34.5706 16.0694 33.5866 16.0397 32.3645 16.0397C28.4294 16.0397 26.9088 17.5306 26.9088 21.4061V24H34.7482L33.4013 31.3344H26.9088V47.8243C38.7926 46.3891 48.001 36.2707 48.001 24H48Z"
+                                fill="#0866FF" />
+                        </svg>
+                    </a>
+                    <a href="https://www.messenger.com/t/578802745317231/" class="messenger" title="Messenger"
+                        target="_blank">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M48 23.28C48 36.6566 37.5197 46.56 24 46.56C21.5722 46.56 19.2422 46.2394 17.0525 45.6374C16.6272 45.5194 16.175 45.553 15.7709 45.7306L11.0074 47.8339C9.76128 48.384 8.35488 47.4979 8.3136 46.1366L8.18304 41.8666C8.16672 41.3405 7.93056 40.849 7.53792 40.4986C2.86752 36.3226 0 30.2774 0 23.28C0 9.90336 10.4803 0 24 0C37.5197 0 48 9.90336 48 23.28Z"
+                                fill="#0866FF" />
+                            <path
+                                d="M30.5162 29.9816L38.872 17.0678C39.712 15.7699 38.1558 14.2589 36.8829 15.1373L28.1604 21.1535C27.8667 21.3561 27.4788 21.3618 27.1793 21.1679L19.437 16.1587C18.7813 15.7344 17.9068 15.9225 17.4834 16.5772L9.12674 29.491C8.28675 30.7889 9.84289 32.2999 11.1158 31.4216L19.8402 25.4043C20.134 25.2018 20.5218 25.196 20.8213 25.3899L28.5617 30.3982C29.2174 30.8225 30.0919 30.6344 30.5162 29.9797V29.9816Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/whipo.ph?igsh=Y2E3MHZwaXd0Z2Jm" class="instagram"
+                        title="Instagram" target="_blank">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_17_27)">
+                                <path
+                                    d="M24 4.32187C30.4125 4.32187 31.1719 4.35 33.6938 4.4625C36.0375 4.56562 37.3031 4.95938 38.1469 5.2875C39.2625 5.71875 40.0688 6.24375 40.9031 7.07812C41.7469 7.92188 42.2625 8.71875 42.6938 9.83438C43.0219 10.6781 43.4156 11.9531 43.5188 14.2875C43.6313 16.8187 43.6594 17.5781 43.6594 23.9813C43.6594 30.3938 43.6313 31.1531 43.5188 33.675C43.4156 36.0188 43.0219 37.2844 42.6938 38.1281C42.2625 39.2438 41.7375 40.05 40.9031 40.8844C40.0594 41.7281 39.2625 42.2438 38.1469 42.675C37.3031 43.0031 36.0281 43.3969 33.6938 43.5C31.1625 43.6125 30.4031 43.6406 24 43.6406C17.5875 43.6406 16.8281 43.6125 14.3063 43.5C11.9625 43.3969 10.6969 43.0031 9.85313 42.675C8.7375 42.2438 7.93125 41.7188 7.09688 40.8844C6.25313 40.0406 5.7375 39.2438 5.30625 38.1281C4.97813 37.2844 4.58438 36.0094 4.48125 33.675C4.36875 31.1438 4.34063 30.3844 4.34063 23.9813C4.34063 17.5688 4.36875 16.8094 4.48125 14.2875C4.58438 11.9437 4.97813 10.6781 5.30625 9.83438C5.7375 8.71875 6.2625 7.9125 7.09688 7.07812C7.94063 6.23438 8.7375 5.71875 9.85313 5.2875C10.6969 4.95938 11.9719 4.56562 14.3063 4.4625C16.8281 4.35 17.5875 4.32187 24 4.32187ZM24 0C17.4844 0 16.6688 0.028125 14.1094 0.140625C11.5594 0.253125 9.80625 0.665625 8.2875 1.25625C6.70312 1.875 5.3625 2.69062 4.03125 4.03125C2.69063 5.3625 1.875 6.70313 1.25625 8.27813C0.665625 9.80625 0.253125 11.55 0.140625 14.1C0.028125 16.6687 0 17.4844 0 24C0 30.5156 0.028125 31.3312 0.140625 33.8906C0.253125 36.4406 0.665625 38.1938 1.25625 39.7125C1.875 41.2969 2.69063 42.6375 4.03125 43.9688C5.3625 45.3 6.70313 46.125 8.27813 46.7344C9.80625 47.325 11.55 47.7375 14.1 47.85C16.6594 47.9625 17.475 47.9906 23.9906 47.9906C30.5063 47.9906 31.3219 47.9625 33.8813 47.85C36.4313 47.7375 38.1844 47.325 39.7031 46.7344C41.2781 46.125 42.6188 45.3 43.95 43.9688C45.2812 42.6375 46.1063 41.2969 46.7156 39.7219C47.3063 38.1938 47.7188 36.45 47.8313 33.9C47.9438 31.3406 47.9719 30.525 47.9719 24.0094C47.9719 17.4938 47.9438 16.6781 47.8313 14.1188C47.7188 11.5688 47.3063 9.81563 46.7156 8.29688C46.125 6.70312 45.3094 5.3625 43.9688 4.03125C42.6375 2.7 41.2969 1.875 39.7219 1.26562C38.1938 0.675 36.45 0.2625 33.9 0.15C31.3313 0.028125 30.5156 0 24 0Z"
+                                    fill="#000100" />
+                                <path
+                                    d="M24 11.6719C17.1938 11.6719 11.6719 17.1938 11.6719 24C11.6719 30.8062 17.1938 36.3281 24 36.3281C30.8062 36.3281 36.3281 30.8062 36.3281 24C36.3281 17.1938 30.8062 11.6719 24 11.6719ZM24 31.9969C19.5844 31.9969 16.0031 28.4156 16.0031 24C16.0031 19.5844 19.5844 16.0031 24 16.0031C28.4156 16.0031 31.9969 19.5844 31.9969 24C31.9969 28.4156 28.4156 31.9969 24 31.9969Z"
+                                    fill="#000100" />
+                                <path
+                                    d="M39.6937 11.1844C39.6937 12.7782 38.4 14.0625 36.8156 14.0625C35.2219 14.0625 33.9375 12.7688 33.9375 11.1844C33.9375 9.59065 35.2313 8.30627 36.8156 8.30627C38.4 8.30627 39.6937 9.60003 39.6937 11.1844Z"
+                                    fill="#000100" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_17_27">
+                                    <rect width="48" height="48" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-section">
+            <img src="https://whipo-assets-bucket.s3.ap-southeast-1.amazonaws.com/html-templates/WHIPO+LOGO.png"
+                alt="WHIPO Logo" style="height: 40px; margin-bottom: 15px;">
+            <div class="footer-text">©2025 Antimony Technologies, Inc., All Rights Reserved.</div>
+            <div class="footer-text">Preferences: You're receiving this email because you're a Whipo service
+                provider.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
